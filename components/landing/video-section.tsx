@@ -1,4 +1,4 @@
-import { Play } from 'lucide-react'
+import { Play } from "lucide-react";
 
 export function VideoSection() {
   return (
@@ -11,49 +11,27 @@ export function VideoSection() {
               A quick, easy first step
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-teal leading-tight mb-6">
-              Before you book a call,{' '}
+              Before you book a call,{" "}
               <em className="not-italic text-teal">watch this.</em>
             </h2>
             <p className="text-lg text-dark-gray leading-relaxed">
-              In two minutes, you&apos;ll know exactly how we work, who we work with, and whether we&apos;re the right fit.
+              In two minutes, you&apos;ll know exactly how we work, who we work
+              with, and whether we&apos;re the right fit.
             </p>
           </div>
 
-          {/* Video Thumbnail */}
-          <div className="relative group cursor-pointer">
-            <div 
-              className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
-              style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="absolute inset-0 bg-dark-teal/40 group-hover:bg-dark-teal/30 transition-colors" />
-              
-              {/* Logo Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Play className="h-8 w-8 text-teal ml-1" fill="currentColor" />
-                  </div>
-                  <div className="mt-6 text-center">
-                    <div className="flex items-center gap-2 text-white">
-                      <svg viewBox="0 0 40 40" className="h-8 w-8" fill="none">
-                        <circle cx="20" cy="20" r="18" fill="#171B24" />
-                        <path d="M12 28V12h6l6 8V12h4v16h-6l-6-8v8h-4z" fill="white" />
-                        <path d="M26 12l4 8-4 8" stroke="#00A0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span className="text-lg font-bold">
-                        PERFORM<span className="text-teal">A</span>NCE
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          {/* Video Embed */}
+          <div className="relative group">
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/z-jlsHwywfE"
+                title="Performance overview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
-            
-            {/* Caption */}
             <p className="mt-4 text-sm text-dark-gray text-center">
               Watch the 2 minute overview
             </p>
@@ -61,5 +39,5 @@ export function VideoSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
