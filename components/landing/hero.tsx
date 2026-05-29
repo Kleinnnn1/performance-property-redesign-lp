@@ -26,13 +26,13 @@ export function Hero() {
           }}
         >
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            QPIA Member
+            Medical Professionals
           </span>
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            PIPA Member
+            Senior Executives
           </span>
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            Independent Advisory
+            Business Owners
           </span>
         </div>
 
@@ -54,8 +54,8 @@ export function Hero() {
             animationDelay: "0.35s",
           }}
         >
-          Property strategy and active portfolio management for medical
-          professionals, senior executives, and business owners.
+          Property strategy and active portfolio management, tailored to your
+          financial position and long-term goals.
         </p>
 
         <p
