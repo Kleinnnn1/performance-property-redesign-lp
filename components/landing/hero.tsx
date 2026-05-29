@@ -105,7 +105,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown className="h-10 w-10 text-white/40" />
+        <ChevronDown className="h-10 w-10 text-white" />
       </div>
 
       <style>{`
