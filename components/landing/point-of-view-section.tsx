@@ -33,7 +33,7 @@ const insights = [
 
 export function PointOfViewSection() {
   return (
-    <section id="insights" className="py-20 md:py-32 bg-secondary">
+    <section id="insights" className="pt-5 md:pt-5 pb-10 md:pb-10 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <p className="text-sm font-semibold text-teal uppercase tracking-wider mb-4">

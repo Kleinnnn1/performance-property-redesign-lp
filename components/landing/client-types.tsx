@@ -63,7 +63,7 @@ const clientTypes = [
 
 export function ClientTypes() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-white">
+    <section id="about" className="pt-12 md:pt-16 pb-0 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16">
@@ -157,27 +157,25 @@ export function ClientTypes() {
       </div>
 
       {/* CTA Banner — full width, no padding/margin */}
-      <div className="px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="relative overflow-hidden rounded-2xl">
-          <div className="absolute inset-0 bg-dark-teal" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-teal via-teal/40 to-emerald-400/60" />
-          <div className="absolute -top-10 right-10 w-64 h-64 bg-teal/30 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 left-20 w-48 h-48 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none" />
-          <div className="relative z-10 py-14 px-8 flex flex-col items-center text-center gap-5">
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              Need more information or assistance?
-            </h3>
-            <p className="text-white/70 text-base max-w-md">
-              Visit our contact page for product support, enquiries and sales.
-            </p>
-            <Link
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal/90 transition-colors shadow-lg shadow-teal/30 text-base"
-            >
-              Contact us
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
+      <div className="relative overflow-hidden mt-12">
+        <div className="absolute inset-0 bg-dark-teal" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-teal via-teal/40 to-emerald-400/60" />
+        <div className="absolute -top-10 right-10 w-64 h-64 bg-teal/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 left-20 w-48 h-48 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none" />
+        <div className="relative z-10 py-14 px-8 flex flex-col items-center text-center gap-5">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">
+            Need more information or assistance?
+          </h3>
+          <p className="text-white/70 text-base max-w-md">
+            Visit our contact page for product support, enquiries and sales.
+          </p>
+          <Link
+            href="#contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal/90 transition-colors shadow-lg shadow-teal/30 text-base"
+          >
+            Contact us
+            <ArrowRight className="h-5 w-5" />
+          </Link>
         </div>
       </div>
     </section>

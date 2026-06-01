@@ -82,7 +82,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-white">
+    <section id="services" className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <p className="text-sm font-semibold text-teal uppercase tracking-wider mb-4">

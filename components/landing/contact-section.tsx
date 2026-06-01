@@ -82,7 +82,7 @@ export function ContactSection() {
     }`;
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-secondary">
+    <section id="contact" className="pt-0 md:pt-10 pb-10 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-teal leading-tight mb-6">

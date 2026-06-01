@@ -39,7 +39,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-secondary">
+    <section id="testimonials" className="pt-12 md:pt-16 pb-0 md:pb-16 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-xl mb-16">
