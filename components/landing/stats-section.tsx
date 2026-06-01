@@ -12,6 +12,7 @@ const stats = [
     suffix: "%",
     label: "Average annual return",
     context: "Above the national residential median — 2019–2024",
+    color: "from-teal to-cyan-400",
   },
   {
     value: 2000,
@@ -19,6 +20,7 @@ const stats = [
     suffix: "+",
     label: "Private clients",
     context: "Doctors, executives, business owners & investors",
+    color: "from-blue-400 to-cyan-400",
   },
   {
     value: 14,
@@ -26,6 +28,7 @@ const stats = [
     suffix: "",
     label: "Year track record",
     context: "Consistent performance across multiple market cycles",
+    color: "from-emerald-400 to-teal",
   },
   {
     value: 2.5,
@@ -34,6 +37,7 @@ const stats = [
     label: "Assets under advice",
     prefix: "$",
     context: "Residential and commercial portfolios, nationally",
+    color: "from-amber-400 to-yellow-300",
   },
 ];
 
@@ -67,7 +71,11 @@ function StatCard({
 }) {
   const display = useCountUp(stat.value, stat.decimals, active);
   return (
-    <div className="p-6 bg-white/5 rounded-xl border border-white/10 flex flex-col gap-3">
+    <div className="relative p-6 bg-white/5 rounded-2xl border border-white/10 flex flex-col gap-3 overflow-hidden group hover:bg-white/8 transition-colors">
+      {/* Gradient accent bar at top */}
+      <div
+        className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} opacity-80`}
+      />
       <div className="text-4xl md:text-5xl font-bold text-white">
         {stat.prefix ?? ""}
         {display}
@@ -122,23 +130,60 @@ export function StatsSection() {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-dark-teal">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      id="stats"
+      className="relative py-20 md:py-32 bg-dark-teal overflow-hidden"
+    >
+      {/* Background accent shapes */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal/8 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(#00A0B4 1px, transparent 1px), linear-gradient(90deg, #00A0B4 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
+            {/* USP highlight label */}
+            <div className="inline-flex items-center gap-2 bg-teal/20 border border-teal/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
+              <span className="text-teal text-xs font-bold uppercase tracking-wider">
+                Verified Track Record
+              </span>
+            </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Numbers that{" "}
               <em className="not-italic text-teal">mean something.</em>
             </h2>
             <p className="text-lg text-white/70 leading-relaxed mb-8">
               Over a decade of consistent performance across residential and
-              commercial portfolios. Each stat below has a story — hover to
-              see the context behind the number.
+              commercial portfolios. Every number below is auditable.
             </p>
+
+            {/* USP callout box */}
+            <div className="bg-teal/10 border border-teal/25 rounded-xl p-5 mb-8">
+              <p className="text-teal font-bold text-sm uppercase tracking-wider mb-2">
+                Why our returns are higher
+              </p>
+              <p className="text-white/70 text-sm leading-relaxed">
+                We don&apos;t take commissions from developers, so we only
+                recommend properties that actually perform — not ones that pay
+                us the best referral fee. That independence is the difference.
+              </p>
+            </div>
+
             <Button
               asChild
               size="lg"
-              className="bg-teal hover:bg-teal/90 text-white font-semibold"
+              className="bg-teal hover:bg-teal/90 text-white font-semibold shadow-lg shadow-teal/30"
             >
               <Link href="#contact">
                 Book a Consultation

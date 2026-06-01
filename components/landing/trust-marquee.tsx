@@ -12,37 +12,34 @@ export function TrustMarquee() {
   const doubled = [...items, ...items];
 
   return (
-    <section className="bg-gray-200 border-y border-border py-10 overflow-hidden relative">
+    <section className="bg-dark-teal border-y border-white/10 py-10 overflow-hidden relative">
       {/* Edge fades */}
       <div
         className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(to right, var(--color-secondary, #F5F5F5) 0%, transparent 100%)",
+          background: "linear-gradient(to right, #171B24 0%, transparent 100%)",
         }}
       />
       <div
         className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(to left, var(--color-secondary, #F5F5F5) 0%, transparent 100%)",
+          background: "linear-gradient(to left, #171B24 0%, transparent 100%)",
         }}
       />
 
-      <p className="text-center text-xs font-semibold text-dark-gray uppercase tracking-[0.2em] mb-8">
+      <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-[0.2em] mb-8">
         Our credentials &amp; track record
       </p>
 
       <div className="marquee-track flex w-max">
         {doubled.map(({ label, sub }, i) => (
           <div key={i} className="flex items-center">
-            {/* Divider dot */}
-            <span className="w-1 h-1 rounded-full bg-teal mx-10 shrink-0 opacity-50" />
+            <span className="w-1.5 h-1.5 rounded-full bg-teal mx-10 shrink-0" />
             <div className="flex flex-col items-center text-center">
-              <span className="text-base font-bold text-dark-teal leading-tight whitespace-nowrap">
+              <span className="text-base font-bold text-white leading-tight whitespace-nowrap">
                 {label}
               </span>
-              <span className="text-xs text-dark-gray mt-0.5 whitespace-nowrap">
+              <span className="text-xs text-white/40 mt-0.5 whitespace-nowrap">
                 {sub}
               </span>
             </div>

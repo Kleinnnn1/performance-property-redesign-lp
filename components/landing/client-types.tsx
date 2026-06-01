@@ -1,42 +1,65 @@
-import { Stethoscope, Briefcase, Building2, PiggyBank, Landmark } from 'lucide-react'
+import {
+  Stethoscope,
+  Briefcase,
+  Building2,
+  PiggyBank,
+  Landmark,
+  ArrowRight,
+} from "lucide-react";
+import Link from "next/link";
 
 const clientTypes = [
   {
-    number: '01',
-    title: 'Medical Professionals',
-    pain: '"I earn well but I\'m always working. I want to own property without it becoming a second job."',
-    description: 'Specialists, surgeons, GPs, dentists, vets. High income, zero spare time — we do everything except sign the contract.',
+    number: "01",
+    title: "Medical Professionals",
+    description:
+      "Specialists, surgeons, GPs, dentists, vets. High income, zero spare time — we do everything except sign the contract.",
     icon: Stethoscope,
+    image:
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+    accent: "from-cyan-500/30 to-teal/10",
   },
   {
-    number: '02',
-    title: 'Senior Executives',
-    pain: '"I\'ve been meaning to get into property for three years. I just never have time to actually do it."',
-    description: 'C-suite leaders and high earners who want property exposure but can\'t manage another inbox.',
+    number: "02",
+    title: "Senior Executives",
+    description:
+      "C-suite leaders and high earners who want property exposure but can't manage another inbox.",
     icon: Briefcase,
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
+    accent: "from-blue-400/30 to-teal/10",
   },
   {
-    number: '03',
-    title: 'Business Owners',
-    pain: '"Most of my wealth is tied up in my business. I need diversification that doesn\'t require my attention."',
-    description: 'Entrepreneurs building wealth outside their business — commercial property in particular suits their tax structure.',
+    number: "03",
+    title: "Business Owners",
+    description:
+      "Entrepreneurs building wealth outside their business — commercial property in particular suits their tax structure.",
     icon: Building2,
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+    accent: "from-emerald-400/30 to-teal/10",
   },
   {
-    number: '04',
-    title: 'Established Investors',
-    pain: '"I have five properties but I genuinely don\'t know how they\'re performing. Nobody has ever told me."',
-    description: 'Experienced investors who want independent, honest portfolio analysis — not just someone to buy more property.',
+    number: "04",
+    title: "Established Investors",
+    description:
+      "Experienced investors who want independent, honest portfolio analysis — not just someone to buy more property.",
     icon: PiggyBank,
+    image:
+      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=80",
+    accent: "from-amber-400/30 to-teal/10",
   },
   {
-    number: '05',
-    title: 'Capital Events',
-    pain: '"I just sold my business. I have capital but no urgency — I want to get this right, not rush."',
-    description: 'Business sales, inheritances, bonuses. We help deploy meaningful capital into property deliberately.',
+    number: "05",
+    title: "Capital Events",
+    description:
+      "Business sales, inheritances, bonuses. We help deploy meaningful capital into property deliberately.",
     icon: Landmark,
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80",
+    accent: "from-purple-400/30 to-teal/10",
   },
-]
+];
 
 export function ClientTypes() {
   return (
@@ -48,13 +71,13 @@ export function ClientTypes() {
             Who we work with
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-teal leading-tight mb-6">
-            Built for people who{' '}
+            Built for people who{" "}
             <em className="not-italic text-teal">think like this.</em>
           </h2>
           <p className="text-lg text-dark-gray leading-relaxed">
-            Our clients share three things: significant earning capacity, limited time, and a desire
-            to treat property as a long-term asset class — not a one-off transaction.
-            If one of these sounds like your internal monologue, we should talk.
+            Our clients share three things: significant earning capacity,
+            limited time, and a desire to treat property as a long-term asset
+            class — not a one-off transaction.
           </p>
         </div>
 
@@ -63,27 +86,35 @@ export function ClientTypes() {
           {clientTypes.slice(0, 3).map((client) => (
             <div
               key={client.number}
-              className="group p-7 bg-secondary rounded-xl hover:bg-teal transition-colors duration-300 flex flex-col"
+              className="group rounded-2xl overflow-hidden border border-border hover:border-teal/40 transition-all duration-300 hover:shadow-lg hover:shadow-teal/10 flex flex-col"
             >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-2xl font-bold text-teal group-hover:text-white/40 transition-colors font-mono">
-                  {client.number}
-                </span>
-                <client.icon className="h-6 w-6 text-teal group-hover:text-white transition-colors" />
+              {/* Image header */}
+              <div className="relative h-40 overflow-hidden">
+                <img
+                  src={client.image}
+                  alt={client.title}
+                  className="w-full h-full object-cover object-[center_22%] group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-b ${client.accent} opacity-80`}
+                />
+                <div className="absolute inset-0 bg-dark-teal/40" />
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="text-xl font-bold text-white/40 font-mono">
+                    {client.number}
+                  </span>
+                  <client.icon className="h-5 w-5 text-white" />
+                </div>
               </div>
 
-              <h3 className="text-lg font-bold text-dark-teal group-hover:text-white transition-colors mb-3">
-                {client.title}
-              </h3>
-
-              {/* The internal monologue quote */}
-              <blockquote className="text-sm text-teal group-hover:text-white/90 italic leading-relaxed mb-4 border-l-2 border-teal/30 group-hover:border-white/30 pl-3 transition-colors">
-                {client.pain}
-              </blockquote>
-
-              <p className="text-sm text-dark-gray group-hover:text-white/80 transition-colors flex-grow leading-relaxed">
-                {client.description}
-              </p>
+              <div className="p-6 flex flex-col flex-grow bg-white group-hover:bg-secondary/30 transition-colors">
+                <h3 className="text-lg font-bold text-dark-teal mb-3 group-hover:text-teal transition-colors">
+                  {client.title}
+                </h3>
+                <p className="text-sm text-dark-gray leading-relaxed flex-grow">
+                  {client.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -93,57 +124,79 @@ export function ClientTypes() {
           {clientTypes.slice(3).map((client) => (
             <div
               key={client.number}
-              className="group p-7 bg-secondary rounded-xl hover:bg-teal transition-colors duration-300 flex flex-col"
+              className="group rounded-2xl overflow-hidden border border-border hover:border-teal/40 transition-all duration-300 hover:shadow-lg hover:shadow-teal/10 flex flex-col"
             >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-2xl font-bold text-teal group-hover:text-white/40 transition-colors font-mono">
-                  {client.number}
-                </span>
-                <client.icon className="h-6 w-6 text-teal group-hover:text-white transition-colors" />
+              <div className="relative h-40 overflow-hidden">
+                <img
+                  src={client.image}
+                  alt={client.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-b ${client.accent} opacity-80`}
+                />
+                <div className="absolute inset-0 bg-dark-teal/40" />
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="text-xl font-bold text-white/40 font-mono">
+                    {client.number}
+                  </span>
+                  <client.icon className="h-5 w-5 text-white" />
+                </div>
               </div>
-
-              <h3 className="text-lg font-bold text-dark-teal group-hover:text-white transition-colors mb-3">
-                {client.title}
-              </h3>
-
-              <blockquote className="text-sm text-teal group-hover:text-white/90 italic leading-relaxed mb-4 border-l-2 border-teal/30 group-hover:border-white/30 pl-3 transition-colors">
-                {client.pain}
-              </blockquote>
-
-              <p className="text-sm text-dark-gray group-hover:text-white/80 transition-colors flex-grow leading-relaxed">
-                {client.description}
-              </p>
+              <div className="p-6 flex flex-col flex-grow bg-white group-hover:bg-secondary/30 transition-colors">
+                <h3 className="text-lg font-bold text-dark-teal mb-3 group-hover:text-teal transition-colors">
+                  {client.title}
+                </h3>
+                <p className="text-sm text-dark-gray leading-relaxed flex-grow">
+                  {client.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Not for everyone — confidence signal */}
-        <div className="mt-12 p-8 border border-border rounded-xl bg-secondary/50">
+        <div className="mt-12 p-8 border border-border rounded-2xl bg-secondary/50">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold text-dark-teal uppercase tracking-wider mb-3">
               Not the right fit for everyone
             </p>
             <p className="text-dark-gray leading-relaxed mb-4">
-              We&apos;re probably not your best option if you&apos;re looking for a quick
-              single acquisition, want to be hands-on in every decision, or have a capital
-              allocation under $500k. We work best as a long-term partner, not a transaction agent.
+              We&apos;re probably not your best option if you&apos;re looking
+              for a quick single acquisition, want to be hands-on in every
+              decision, or have a capital allocation under $500k. We work best
+              as a long-term partner, not a transaction agent.
             </p>
             <p className="text-sm text-dark-gray/70">
-              If you&apos;re not sure — book a consultation anyway. We&apos;ll tell you honestly.
+              If you&apos;re not sure — book a consultation anyway. We&apos;ll
+              tell you honestly.
             </p>
           </div>
         </div>
+      </div>
 
-        {/* CTA */}
-        <div className="mt-10 text-center">
-          <a
+      {/* CTA Banner — full width, no padding/margin */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-dark-teal" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-teal via-teal/40 to-emerald-400/60" />
+        <div className="absolute -top-10 right-10 w-64 h-64 bg-teal/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 left-20 w-48 h-48 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none" />
+        <div className="relative z-10 py-14 px-8 flex flex-col items-center text-center gap-5">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">
+            Need more information or assistance?
+          </h3>
+          <p className="text-white/70 text-base max-w-md">
+            Visit our contact page for product support, enquiries and sales.
+          </p>
+          <Link
             href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-dark-teal text-white font-semibold rounded-lg hover:bg-dark-teal/90 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal/90 transition-colors shadow-lg shadow-teal/30 text-base"
           >
-            Book a Consultation
-          </a>
+            Contact us
+            <ArrowRight className="h-5 w-5" />
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,29 +1,50 @@
 const team = [
   {
-    name: 'James Willoughby',
-    role: 'Founder & Lead Adviser',
-    initial: 'JW',
-    background: '18 years in property advisory and investment banking. Ran institutional property funds before founding Performance Property in 2010. Personally invested in 6 residential and 2 commercial properties.',
-    philosophy: '"I got into this because I watched smart, high-income people lose years to bad advice. The model here is simple: we only make money when you trust us enough to stay."',
-    credentials: ['QPIA Qualified', 'PIPA Member', 'B.Comm (Finance), University of Melbourne'],
+    name: "James Willoughby",
+    role: "Founder & Lead Adviser",
+    initial: "JW",
+    background:
+      "18 years in property advisory and investment banking. Ran institutional property funds before founding Performance Property in 2010. Personally invested in 6 residential and 2 commercial properties.",
+    credentials: [
+      "QPIA Qualified",
+      "PIPA Member",
+      "B.Comm (Finance), University of Melbourne",
+    ],
+    accentColor: "bg-teal",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: 'Sarah Chen',
-    role: 'Head of Acquisition & Research',
-    initial: 'SC',
-    background: 'Former property analyst at CBRE and JLL. Leads all market research, due diligence, and acquisition strategy. Has reviewed over 4,000 properties and approved fewer than 8% for acquisition.',
-    philosophy: '"The deals we walk away from are just as important as the ones we do. Our job is to protect your capital first, grow it second."',
-    credentials: ['B.Prop (Hons), University of QLD', 'RICS Associate', 'Certified Property Practitioner'],
+    name: "Sarah Chen",
+    role: "Head of Acquisition & Research",
+    initial: "SC",
+    background:
+      "Former property analyst at CBRE and JLL. Leads all market research, due diligence, and acquisition strategy. Has reviewed over 4,000 properties and approved fewer than 8% for acquisition.",
+    credentials: [
+      "B.Prop (Hons), University of QLD",
+      "RICS Associate",
+      "Certified Property Practitioner",
+    ],
+    accentColor: "bg-emerald-400",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: 'David Park',
-    role: 'Portfolio & Client Relations',
-    initial: 'DP',
-    background: 'Over a decade in portfolio management and client advisory. Oversees ongoing management of all client portfolios and is the primary contact for quarterly reviews and strategy sessions.',
-    philosophy: '"A good portfolio review should take you 15 minutes to read and give you total clarity. If it doesn\'t, the report has failed — not you."',
-    credentials: ['B.Bus (Property), RMIT', 'CPP Certified', '10+ years portfolio management'],
+    name: "David Park",
+    role: "Portfolio & Client Relations",
+    initial: "DP",
+    background:
+      "Over a decade in portfolio management and client advisory. Oversees ongoing management of all client portfolios and is the primary contact for quarterly reviews and strategy sessions.",
+    credentials: [
+      "B.Bus (Property), RMIT",
+      "CPP Certified",
+      "10+ years portfolio management",
+    ],
+    accentColor: "bg-blue-400",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
   },
-]
+];
 
 export function TeamSection() {
   return (
@@ -34,66 +55,67 @@ export function TeamSection() {
             The people
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-teal leading-tight mb-6">
-            You&apos;re investing with{' '}
+            You&apos;re investing with{" "}
             <em className="not-italic text-teal">people, not a firm.</em>
           </h2>
           <p className="text-lg text-dark-gray leading-relaxed">
-            Every client works directly with a senior adviser. You won&apos;t be handed
-            to a junior after onboarding. The people below are the ones who answer your calls.
+            Every client works directly with a senior adviser. You won&apos;t be
+            handed to a junior after onboarding. The people below are the ones
+            who answer your calls.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member) => (
-            <div key={member.name} className="flex flex-col">
-              {/* Avatar */}
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-16 h-16 rounded-full bg-dark-teal flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold text-lg tracking-tight">
-                    {member.initial}
-                  </span>
+            <div
+              key={member.name}
+              className="group bg-secondary/40 rounded-2xl overflow-hidden border border-border hover:border-teal/30 hover:shadow-lg hover:shadow-teal/10 transition-all duration-300 flex flex-col"
+            >
+              {/* Photo header */}
+              <div className="relative h-52 overflow-hidden bg-dark-teal">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-[center_20%] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/80 to-transparent" />
+                {/* Name overlay */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="font-bold text-white text-lg leading-tight">
+                    {member.name}
+                  </p>
+                  <p className="text-teal text-sm font-semibold">
+                    {member.role}
+                  </p>
                 </div>
-                <div>
-                  <p className="font-bold text-dark-teal text-lg leading-tight">{member.name}</p>
-                  <p className="text-sm text-teal font-medium">{member.role}</p>
-                </div>
+                {/* Accent stripe */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 ${member.accentColor}`}
+                />
               </div>
 
-              {/* Background */}
-              <p className="text-sm text-dark-gray leading-relaxed mb-5">
-                {member.background}
-              </p>
-
-              {/* Philosophy quote */}
-              <blockquote className="border-l-2 border-teal pl-4 mb-5 flex-grow">
-                <p className="text-sm text-dark-teal italic leading-relaxed">
-                  {member.philosophy}
+              <div className="p-6 flex flex-col flex-grow">
+                {/* Background */}
+                <p className="text-sm text-dark-gray leading-relaxed mb-5">
+                  {member.background}
                 </p>
-              </blockquote>
 
-              {/* Credentials */}
-              <div className="flex flex-wrap gap-2">
-                {member.credentials.map((c) => (
-                  <span
-                    key={c}
-                    className="text-xs bg-secondary text-dark-gray px-2.5 py-1 rounded-full"
-                  >
-                    {c}
-                  </span>
-                ))}
+                {/* Credentials */}
+                <div className="flex flex-wrap gap-2">
+                  {member.credentials.map((c) => (
+                    <span
+                      key={c}
+                      className="text-xs bg-white border border-border text-dark-gray px-2.5 py-1 rounded-full"
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* <div className="mt-14 p-7 bg-secondary rounded-xl border-l-4 border-teal">
-          <p className="text-base text-dark-teal font-medium leading-relaxed max-w-3xl">
-            <strong>A note on placeholders:</strong> The profiles above use placeholder names
-            and details. Replace with your actual team members — this section is one of the
-            highest-trust signals on the entire site.
-          </p>
-        </div> */}
       </div>
     </section>
-  )
+  );
 }
