@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Performance Property",
     images: [
       {
-        url: "/preview_img.jpg",
+        url: "/preview_img.png",
         width: 1200,
         height: 630,
       },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Performance Property | Expert Property Investment Advisory",
     description:
       "Property strategy and active portfolio management for high achievers.",
-    images: ["/preview_img.jpg"],
+    images: ["/preview_img.png"],
   },
 };
 
