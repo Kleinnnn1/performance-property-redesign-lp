@@ -6,7 +6,9 @@ import { ClientTypes } from "@/components/landing/client-types";
 import { ProcessSection } from "@/components/landing/process-section";
 import { ServicesSection } from "@/components/landing/services-section";
 import { StatsSection } from "@/components/landing/stats-section";
+import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { PointOfViewSection } from "@/components/landing/point-of-view-section";
 import { FAQSection } from "@/components/landing/faq-section";
 import { ContactSection } from "@/components/landing/contact-section";
 import { Footer } from "@/components/landing/footer";
@@ -23,7 +25,9 @@ export default function LandingPage() {
       <ProcessSection />
       <ServicesSection />
       <StatsSection />
+      <TeamSection />
       <TestimonialsSection />
+      <PointOfViewSection />
       <FAQSection />
       <ContactSection />
       <Footer />

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Play, ChevronDown } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -18,64 +18,47 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+        {/* Independence badge — replaces generic audience pills */}
         <div
           className="flex flex-wrap items-center gap-3 mb-8"
-          style={{
-            animation: "heroFadeUp 0.6s ease both",
-            animationDelay: "0.05s",
-          }}
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.05s" }}
         >
-          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            Medical Professionals
+          <span className="inline-flex items-center gap-2 bg-teal/20 backdrop-blur-sm text-teal text-xs font-semibold px-3 py-1.5 rounded-full border border-teal/30 uppercase tracking-wider">
+            Independent & Unbiased
           </span>
-          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            Senior Executives
-          </span>
-          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
-            Business Owners
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/70 text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
+            No developer commissions. No agent kickbacks. Paid only by you.
           </span>
         </div>
 
+        {/* Headline — specific to the firm's value prop */}
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-4xl text-balance"
-          style={{
-            animation: "heroFadeUp 0.6s ease both",
-            animationDelay: "0.2s",
-          }}
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.2s" }}
         >
-          Expert Property. <br className="hidden sm:block" />
-          <em className="not-italic text-teal">Proven Performance.</em>
+          We build portfolios for people who don&apos;t have time{" "}
+          <em className="not-italic text-teal">to build portfolios.</em>
         </h1>
 
         <p
           className="text-lg md:text-xl text-white/80 max-w-2xl mb-4 leading-relaxed"
-          style={{
-            animation: "heroFadeUp 0.6s ease both",
-            animationDelay: "0.35s",
-          }}
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.35s" }}
         >
-          Property strategy and active portfolio management, tailored to your
-          financial position and long-term goals.
+          Property strategy, acquisition, and active management for Australia&apos;s
+          high-income professionals — so your wealth works while you do.
         </p>
 
         <p
-          className="text-sm md:text-base text-white/60 max-w-2xl mb-10"
-          style={{
-            animation: "heroFadeUp 0.6s ease both",
-            animationDelay: "0.45s",
-          }}
+          className="text-sm md:text-base text-white/50 max-w-2xl mb-10"
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.45s" }}
         >
-          Strategy. Acquisition. Active management. Independent performance
-          reporting. Residential and commercial. Over five years building
-          Australian wealth.
+          Residential &amp; commercial · National market access · Quarterly reporting
         </p>
 
+        {/* CTA row */}
         <div
-          className="flex flex-col sm:flex-row gap-4 items-start sm:items-center"
-          style={{
-            animation: "heroFadeUp 0.6s ease both",
-            animationDelay: "0.55s",
-          }}
+          className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-12"
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.55s" }}
         >
           <Button
             asChild
@@ -98,14 +81,25 @@ export function Hero() {
               Watch our Story
             </Link>
           </Button>
-          <span className="text-white/40 text-sm hidden sm:block">
-            Trusted by 2,000+ private clients
-          </span>
         </div>
-      </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown className="h-10 w-10 text-white" />
+        {/* Inline proof bar */}
+        <div
+          className="flex flex-wrap items-center gap-x-8 gap-y-3"
+          style={{ animation: "heroFadeUp 0.6s ease both", animationDelay: "0.65s" }}
+        >
+          {[
+            { value: "2,000+", label: "Private clients" },
+            { value: "$2.5B+", label: "Assets under advice" },
+            { value: "14 years", label: "Track record" },
+            { value: "13.32%*", label: "Avg. annual return" },
+          ].map(({ value, label }) => (
+            <div key={label} className="flex items-center gap-2">
+              <span className="text-white font-bold text-lg">{value}</span>
+              <span className="text-white/50 text-sm">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <style>{`

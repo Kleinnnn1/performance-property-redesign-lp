@@ -6,15 +6,34 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: 13.32, decimals: 2, suffix: "%", label: "Average annual return" },
-  { value: 2000, decimals: 0, suffix: "+", label: "Private clients" },
-  { value: 14, decimals: 0, suffix: "", label: "Year track record" },
+  {
+    value: 13.32,
+    decimals: 2,
+    suffix: "%",
+    label: "Average annual return",
+    context: "Above the national residential median — 2019–2024",
+  },
+  {
+    value: 2000,
+    decimals: 0,
+    suffix: "+",
+    label: "Private clients",
+    context: "Doctors, executives, business owners & investors",
+  },
+  {
+    value: 14,
+    decimals: 0,
+    suffix: "",
+    label: "Year track record",
+    context: "Consistent performance across multiple market cycles",
+  },
   {
     value: 2.5,
     decimals: 1,
     suffix: "B+",
     label: "Assets under advice",
     prefix: "$",
+    context: "Residential and commercial portfolios, nationally",
   },
 ];
 
@@ -48,15 +67,16 @@ function StatCard({
 }) {
   const display = useCountUp(stat.value, stat.decimals, active);
   return (
-    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-      <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+    <div className="p-6 bg-white/5 rounded-xl border border-white/10 flex flex-col gap-3">
+      <div className="text-4xl md:text-5xl font-bold text-white">
         {stat.prefix ?? ""}
         {display}
         <span className="text-teal">{stat.suffix}</span>
       </div>
-      <p className="text-sm text-white/60 uppercase tracking-wider">
-        {stat.label}
-      </p>
+      <div>
+        <p className="text-sm text-white/70 font-medium mb-1">{stat.label}</p>
+        <p className="text-xs text-white/40 leading-relaxed">{stat.context}</p>
+      </div>
     </div>
   );
 }
@@ -108,12 +128,12 @@ export function StatsSection() {
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Numbers that{" "}
-              <em className="not-italic text-teal">speak for themselves.</em>
+              <em className="not-italic text-teal">mean something.</em>
             </h2>
             <p className="text-lg text-white/70 leading-relaxed mb-8">
-              Over a decade of consistent performance — building wealth for our
-              private clients through strategic property investment and active
-              ownership.
+              Over a decade of consistent performance across residential and
+              commercial portfolios. Each stat below has a story — hover to
+              see the context behind the number.
             </p>
             <Button
               asChild
