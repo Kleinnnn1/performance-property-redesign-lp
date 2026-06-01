@@ -154,47 +154,30 @@ export function ClientTypes() {
             </div>
           ))}
         </div>
-
-        {/* Not for everyone — confidence signal */}
-        <div className="mt-12 p-8 border border-border rounded-2xl bg-secondary/50">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-dark-teal uppercase tracking-wider mb-3">
-              Not the right fit for everyone
-            </p>
-            <p className="text-dark-gray leading-relaxed mb-4">
-              We&apos;re probably not your best option if you&apos;re looking
-              for a quick single acquisition, want to be hands-on in every
-              decision, or have a capital allocation under $500k. We work best
-              as a long-term partner, not a transaction agent.
-            </p>
-            <p className="text-sm text-dark-gray/70">
-              If you&apos;re not sure — book a consultation anyway. We&apos;ll
-              tell you honestly.
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* CTA Banner — full width, no padding/margin */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-dark-teal" />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-teal via-teal/40 to-emerald-400/60" />
-        <div className="absolute -top-10 right-10 w-64 h-64 bg-teal/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 left-20 w-48 h-48 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none" />
-        <div className="relative z-10 py-14 px-8 flex flex-col items-center text-center gap-5">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">
-            Need more information or assistance?
-          </h3>
-          <p className="text-white/70 text-base max-w-md">
-            Visit our contact page for product support, enquiries and sales.
-          </p>
-          <Link
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal/90 transition-colors shadow-lg shadow-teal/30 text-base"
-          >
-            Contact us
-            <ArrowRight className="h-5 w-5" />
-          </Link>
+      <div className="px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 bg-dark-teal" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-teal via-teal/40 to-emerald-400/60" />
+          <div className="absolute -top-10 right-10 w-64 h-64 bg-teal/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 left-20 w-48 h-48 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none" />
+          <div className="relative z-10 py-14 px-8 flex flex-col items-center text-center gap-5">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Need more information or assistance?
+            </h3>
+            <p className="text-white/70 text-base max-w-md">
+              Visit our contact page for product support, enquiries and sales.
+            </p>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal/90 transition-colors shadow-lg shadow-teal/30 text-base"
+            >
+              Contact us
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
