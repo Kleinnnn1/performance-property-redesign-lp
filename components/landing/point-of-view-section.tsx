@@ -70,12 +70,6 @@ export function PointOfViewSection() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-sm text-dark-gray/60 max-w-lg mx-auto">
-            These are placeholder articles. Link each card to a real blog post or insight page
-            to add the full SEO and credibility value of this section.
-          </p>
-        </div>
       </div>
     </section>
   )
